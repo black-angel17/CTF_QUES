@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://example.com/page1</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>http://example.com/page2</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+A sitemap.xml file is used to provide information about the pages, videos, and other files on a website, and how they are organized. 
+Search engines like Google use this file to better understand the structure of a site and index its content more effectively.
+ file:
+
+key -> bYtE_BuStErS{_-KeEp-_-RoCkInG-_-}
+</urlset>
+
