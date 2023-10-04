@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack the Code - CTF Challenge</title>
+    <style>
+        body {
+            background-color: black;
+            color: lime;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .terminal {
+            border: 2px solid lime;
+            padding: 10px;
+            max-width: 600px;
+            width: 100%;
+            background-color: black;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .command-input {
+            width: calc(100% - 30px);
+            background-color: black;
+            color: lime;
+            border: none;
+            outline: none;
+        }
+
+        .command-input:focus {
+            outline: none;
+        }
+
+        .submit-button {
+            background-color: lime;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the CTF Challenge</h1>
+    <div class="terminal" id="terminal">
+        <p>[REDACTED] Terminal v1.0</p>
+        <p>Logged in as root</p>
+        <p>Enter 'help' for available commands</p>
+    </div>
+    <p>Command: <input class="command-input" type="text" id="command" autocomplete="off"><button class="submit-button" onclick="executeCommand()">Execute</button></p>
+    
+    <script>
+        function executeCommand() {
+            var command = document.getElementById('command').value;
+            var terminalDiv = document.getElementById('terminal');
+            var p = document.createElement('p');
+            p.innerText = "> " + command;
+            terminalDiv.appendChild(p);
+
+            if (command === 'help') {
+                var output = "Available commands: find_flag, help";
+            } else if (command === 'find_flag') {
+                var output = "Congratulations! You found the flag: ABC123";
+            } else {
+                var output = "Command not recognized. Type 'help' for available commands.";
+            }
+
+            var result = document.createElement('p');
+            result.innerText = output;
+            terminalDiv.appendChild(result);
+
+            document.getElementById('command').value = '';
+            terminalDiv.scrollTop = terminalDiv.scrollHeight;
+        }
+    </script>
+</body>
+</html>
